@@ -1,0 +1,58 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s ease;
+  }
+  &--pink {
+    background-color: $color-secondary;
+    color: $color-primary;
+  }
+  &--red {
+    background-color: $color-red;
+    color: $color-white;
+  }
+  &--bordered {
+    background-color: transparent;
+    color: $color-white;
+    border: 3px solid $color-white;
+  }
+  &--huge-narrow {
+    padding: 0.5rem 8rem;
+    border-radius: 0.6rem;
+    font-size: 2.5rem; 
+  }
+  &--huge {
+    padding: 0.5rem 3rem;
+    border-radius: 0.6rem;
+    font-size: 2.5rem;
+  }
+  &--wide {
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.6rem;
+    font-size: 2rem;
+  }
+  &--narrow {
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    @media screen and (max-width: $bp-very-large) {
+      font-size: 1.3rem;
+    }
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.1rem;
+    }
+  }
+  &:hover {
+    /* make sure you get pointer cursor when */
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  &:active,
+  &:focus {
+    transform: scale(1.02);
+  }
+}

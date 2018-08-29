@@ -1,0 +1,29 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 5rem;
+  @media screen and (max-width: $bp-large) {
+    padding-left: 0;
+  }
+  &__service-box {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $bp-large) {
+    }
+    &__icon-container {
+      flex: 0 0 $icon-container-dimension;
+      background-color: $color-tertiary;
+      border-radius: 50%;
+      text-align: center;
+      &__icon {
+        color: $color-white;
+        line-height: $icon-container-dimension;
+        font-size: $icon-container-dimension - 4rem;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

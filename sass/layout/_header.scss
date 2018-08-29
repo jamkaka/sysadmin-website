@@ -1,0 +1,142 @@
+.header {
+  /* nav part */
+  background-image: linear-gradient(rgba(0, 0, 0, .5) 0, transparent 30%), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: top;
+  /* needed to specify in px */
+  height: 80rem;
+  position: relative;
+  @media screen and (max-width: $bp-very-large) {
+    height: 60rem;
+  }
+  @media screen and (max-width: $bp-large) {
+    height: 50rem;
+  }
+  &__navigation {
+    padding-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @media screen and (max-width: $bp-very-large) {
+      padding: 0 4rem;
+      padding-top: 2.5rem;
+    }
+    &-list {
+      list-style: none;
+      transition: opacity .4s ease, visibility .4s ease, transform .4s ease, display .1s .4s ease;
+      @media screen and (max-width: $bp-large) {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+        display: none;
+        transition: opacity .6s .1s ease, visibility .6s .1s ease, transform .6s .1s ease, display .2s ease;
+      }
+    }
+    &-item {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      color: $color-white;
+      font-size: 1.6rem;
+    }
+    &--opaque {
+      position: fixed;
+      padding: 0;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 100;
+      padding: 1rem 4em; 
+      // dropdown necessary part
+      overflow: hidden;
+      @include gradient-background;
+      transition: transform .5s .3s ease-out;
+    }
+  }
+  /* text-box part */
+  &__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+  &__text-box-item {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: rgba($color-white, 0.5);
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &--1 {
+      animation-name: moveInRight;
+      animation-duration: 1.5s;
+      animation-delay: 0.5s;
+    }
+    &--2 {
+      animation-name: moveInLeft;
+      animation-duration: 1.5s;
+      animation-delay: 0.5s;
+    }
+    &--3 {
+      animation-name: moveInRight;
+      animation-duration: 1.5s;
+      animation-delay: 0.5s
+    }
+  }
+  &__hamburger-menu {
+    height: 3.5rem;
+    border: 2px solid $color-white;
+    width: 0;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; // part for animation
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    @media screen and (max-width: $bp-large) {
+      transform: scale(1);
+      visibility: visible;
+      opacity: 1;
+      width: 4rem;
+    }
+    &__icon {
+      display: block;
+      width: 65%;
+      position: relative;
+      @include menu-hamburger-icon-line;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        @include menu-hamburger-icon-line;
+        transform: translateY(.55rem);
+        transition: all .2s ease;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        @include menu-hamburger-icon-line;
+        transform: translateY(-.55rem);
+        transition: all .2s ease;
+      }
+    }
+    &:hover &__icon::before {
+        transform: translateY(.75rem);
+    }
+    &:hover &__icon::after  {
+        transform: translateY(-.75rem);
+    }
+    
+  }
+}

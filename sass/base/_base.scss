@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* forcing inheritance from body */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  animation-name: fadeInFromBlack;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+  animation-delay: 0.5s;
+  @media screen and (max-width: 750px) {
+    font-size: 56.25%;
+  }
+  @media screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+// start line with bullet
+ul {
+  list-style-position: inside;
+  line-height: 130%;
+}

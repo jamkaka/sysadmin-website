@@ -1,0 +1,10 @@
+.mini-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin: 0 1rem 2rem 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px .8rem rgba($color-black, .4);
+  transition: all .3s ease;
+}

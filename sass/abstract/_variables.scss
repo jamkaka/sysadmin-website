@@ -1,0 +1,25 @@
+/* font variables */
+
+$default-font-size: 1.6rem;
+/* color variables */
+
+$color-primary: #011638;
+$color-secondary: #C6C3C5;
+$color-tertiary: #2E294E;
+$color-quaternary:#D499B9;
+$color-white: #fff;
+$color-black: #000;
+$color-red: #E71D36;
+/* grid gutter */
+//deprecated because of using flexbox
+// $grid-gutter: 4rem;
+/* icons */
+
+$icon-container-dimension: 10rem;
+$nav-height: 59px;
+
+/* media queries sizes */
+$bp-very-large: 75em; // 1200px
+$bp-large: 56.25em; // 900px
+$bp-medium: 37.5em; // 600px
+$bp-small: 25em; // 400px

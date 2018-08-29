@@ -1,0 +1,19 @@
+@mixin placeholder {
+  &::placeholder {
+    font-size: 1.4rem;
+    color: rgba($color-primary, 0.5);
+    font-family: 'Lato';
+  }
+}
+
+@mixin gradient-background {
+  background: rgb(51, 33, 45);
+  background: linear-gradient(63deg, rgba(51, 33, 45, 1) 0%, rgba(46, 41, 78, 1) 51%, rgba(1, 22, 56, 1) 100%);
+}
+
+@mixin menu-hamburger-icon-line {
+  border-radius: .2rem;
+  height: 2px;
+  background-color: $color-white;
+}
+

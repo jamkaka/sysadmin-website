@@ -1,0 +1,50 @@
+.form {
+  &__group {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index:50;
+    @include placeholder;
+  }
+  &__textarea {
+    width: 100%;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Lato';
+    position: relative;
+    z-index:50;
+    @include placeholder;
+    &__label {
+      position: absolute;
+      color: $color-white;
+      font-weight: 600;
+      top: 9%;
+      left: 0;
+      transform: translateX(-120%) translateY(-50%);
+      transition: all .5s ease-out;
+    }
+  }
+  &__label {
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateX(-120%) translateY(-50%);
+    font-weight: 600;
+    z-index:10;
+    color: $color-white;
+    transition: all .5s ease-out;
+  }
+  &__input:placeholder-shown + &__label {
+    transform: translateY(-50%);
+  }
+  &__textarea:placeholder-shown + &__textarea__label {
+    transform: translateY(-50%);
+  }
+}
