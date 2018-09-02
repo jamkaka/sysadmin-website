@@ -13,14 +13,18 @@
     }
     &__icon-container {
       flex: 0 0 $icon-container-dimension;
+      height: $icon-container-dimension;
       background-color: $color-tertiary;
       border-radius: 50%;
       text-align: center;
-      &__icon {
-        color: $color-white;
-        line-height: $icon-container-dimension;
-        font-size: $icon-container-dimension - 4rem;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__icon {
+      height: $icon-dimension;
+      width: $icon-dimension;
+      fill: #fff;
     }
     &:not(:last-child) {
       margin-bottom: 1rem;
