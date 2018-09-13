@@ -17,3 +17,29 @@
   background-color: $color-white;
 }
 
+@mixin link-style-reset {
+  outline: none;
+  text-decoration: none;
+}
+
+@mixin responsive-nav-icon {
+  height: 3.5rem;
+  border: 2px solid $color-white;
+  width: 0;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; 
+  // part for animation
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .4s ease;
+  @media screen and (max-width: $bp-large) {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+    width: 4rem;
+  }
+}

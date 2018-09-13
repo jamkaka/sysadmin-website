@@ -12,6 +12,9 @@
   @media screen and (max-width: $bp-large) {
     height: 50rem;
   }
+  &__invisible-header-wrapper {
+    display: none;
+  }
   &__navigation {
     padding-top: 2.5rem;
     display: flex;
@@ -24,13 +27,15 @@
     }
     &-list {
       list-style: none;
-      transition: opacity .4s ease, visibility .4s ease, transform .4s ease, display .1s .4s ease;
+      transform: scale(1);
+      overflow: hidden;
+      display: block;
+      transition: opacity .2s, visibility .2s, transform .2s;
       @media screen and (max-width: $bp-large) {
         opacity: 0;
         visibility: hidden;
         transform: scale(0);
         display: none;
-        transition: opacity .6s .1s ease, visibility .6s .1s ease, transform .6s .1s ease, display .2s ease;
       }
     }
     &-item {
@@ -39,8 +44,10 @@
         margin-right: 2rem;
       }
     }
-    &-link {
-      text-decoration: none;
+    &-link:link,
+    &-link:visited,
+    &-link:focus {
+      @include link-style-reset;
       color: $color-white;
       font-size: 1.6rem;
     }
@@ -49,8 +56,6 @@
       padding: 0;
       top: 0;
       left: 0;
-      opacity: 0;
-      visibility: hidden;
       z-index: 100;
       padding: 1rem 4em; 
       // dropdown necessary part
@@ -77,66 +82,71 @@
     &--1 {
       animation-name: moveInRight;
       animation-duration: 1.5s;
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
+      animation-fill-mode: backwards;
     }
     &--2 {
       animation-name: moveInLeft;
       animation-duration: 1.5s;
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
+      animation-fill-mode: backwards;
     }
     &--3 {
       animation-name: moveInRight;
       animation-duration: 1.5s;
-      animation-delay: 0.5s
+      animation-delay: 0.2s;
+      animation-fill-mode: backwards;
     }
   }
   &__hamburger-menu {
-    height: 3.5rem;
-    border: 2px solid $color-white;
-    width: 0;
-    border-radius: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer; // part for animation
-    transform: scale(0);
-    visibility: hidden;
-    opacity: 0;
-    transition: all .4s ease;
-    @media screen and (max-width: $bp-large) {
-      transform: scale(1);
-      visibility: visible;
-      opacity: 1;
-      width: 4rem;
-    }
+    @include responsive-nav-icon;
     &__icon {
       display: block;
       width: 65%;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: all .3s;
       @include menu-hamburger-icon-line;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        @include menu-hamburger-icon-line;
-        transform: translateY(.55rem);
-        transition: all .2s ease;
+      &:first-child {
+        top: 30%;
       }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        @include menu-hamburger-icon-line;
-        transform: translateY(-.55rem);
-        transition: all .2s ease;
+      &:last-child {
+        top: 74%;
       }
     }
-    &:hover &__icon::before {
-        transform: translateY(.75rem);
+    // for animation
+    &--is-active &__icon:nth-child(1) {
+      transform-origin: right;
+      transform: translate(-50%,-50%) rotate(-45deg);
+      top: 25%;
+      left: 42%;
+    } 
+    &--is-active &__icon:nth-child(2) {
+      opacity: 0;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    } 
+    &--is-active &__icon:nth-child(3) {
+      transform-origin: right;
+      transform: translate(-50%,-50%) rotate(45deg);
+      top: 80%;
+      left: 42%;
     }
-    &:hover &__icon::after  {
-        transform: translateY(-.75rem);
+  }
+  &__slidedown-btn {
+    @include responsive-nav-icon;
+    &__nav-link {
+      width: 100%;
+      height: 100%;
     }
-    
+    &__icon {
+      fill: $color-white;
+      width: 100%; 
+      height: 100%;
+      &:hover {
+        animation: shake-vertical 7s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+      }
+    }
   }
 }

@@ -55,4 +55,41 @@
       }
     }
   }
+  &__toggler-icon {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 2px solid $color-white;
+    border-radius: 50%;
+    &::before {
+      content:"";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 50%;
+      height: 2px;
+      background-color: $color-white;
+    }
+    &::after {
+      content:"";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      transform: translate(-50%,-50%) rotate(90deg);
+      width: 50%;
+      height: 2px;
+      background-color: $color-white;
+      transition: all .6s ease;
+    }
+  }
+  // active state to change
+  &__single__tab--is-active > &__toggler-icon::after {
+    transform: translate(-50%,-50%) rotate(0deg);
+    opacity: 0;
+  } 
 }

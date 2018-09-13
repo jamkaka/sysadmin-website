@@ -16,7 +16,7 @@ body {
   font-weight: 900;
   animation-name: fadeIn;
   animation-duration: 1s;
-  animation-delay: 4.5s;
+  animation-delay: 3.5s;
   animation-fill-mode: backwards;
   @media screen and (max-width: $bp-very-large) {
     font-size: 5.5rem;
@@ -53,13 +53,13 @@ body {
   &--1 {
     animation-name: fadeIn;
     animation-duration: 1s;
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
     animation-fill-mode: backwards;
   }
   &--2 {
     animation-name: fadeIn;
     animation-duration: 1s;
-    animation-delay: 3.5s;
+    animation-delay: 2.5s;
     animation-fill-mode: backwards;
   }
 }
