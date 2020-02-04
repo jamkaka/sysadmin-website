@@ -1,6 +1,7 @@
 .header {
   /* nav part */
-  background-image: linear-gradient(rgba(0, 0, 0, .5) 0, transparent 30%), url(../img/hero.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0, transparent 30%),
+    url(../img/hero-compressed.jpeg);
   background-size: cover;
   background-position: center;
   /* needed to specify in px */
@@ -30,7 +31,7 @@
       transform: scale(1);
       overflow: hidden;
       display: block;
-      transition: opacity .2s, visibility .2s, transform .2s;
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
       @media screen and (max-width: $bp-large) {
         opacity: 0;
         visibility: hidden;
@@ -57,11 +58,11 @@
       top: 0;
       left: 0;
       z-index: 100;
-      padding: 1rem 4em; 
+      padding: 1rem 4em;
       // dropdown necessary part
       overflow: hidden;
       @include gradient-background;
-      transition: transform .5s .3s ease-out;
+      transition: transform 0.5s 0.3s ease-out;
     }
   }
   /* text-box part */
@@ -106,8 +107,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
-      transition: all .3s;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
       @include menu-hamburger-icon-line;
       &:first-child {
         top: 30%;
@@ -119,17 +120,17 @@
     // for animation
     &--is-active &__icon:nth-child(1) {
       transform-origin: right;
-      transform: translate(-50%,-50%) rotate(-45deg);
+      transform: translate(-50%, -50%) rotate(-45deg);
       top: 25%;
       left: 42%;
-    } 
+    }
     &--is-active &__icon:nth-child(2) {
       opacity: 0;
-      transform: translate(-50%,-50%) rotate(-45deg);
-    } 
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
     &--is-active &__icon:nth-child(3) {
       transform-origin: right;
-      transform: translate(-50%,-50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
       top: 80%;
       left: 42%;
     }
@@ -142,10 +143,11 @@
     }
     &__icon {
       fill: $color-white;
-      width: 100%; 
+      width: 100%;
       height: 100%;
       &:hover {
-        animation: shake-vertical 7s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+        animation: shake-vertical 7s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+          infinite both;
       }
     }
   }
